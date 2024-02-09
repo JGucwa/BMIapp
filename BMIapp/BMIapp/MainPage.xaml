@@ -2,9 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMIapp.MainPage">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Zapisz"/>
+        <ToolbarItem Text="Wyniki"/>
+    </ContentPage.ToolbarItems>
     <StackLayout>
-        
+
+        <Label Text="Oblicz swoje BMI" FontAttributes="Bold" FontSize="30" Margin="30" HorizontalOptions="CenterAndExpand"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="30">
+            <Label Text="Kobieta" FontAttributes="Bold" WidthRequest="90" FontSize="18"/>
+            <RadioButton x:Name="gender" FontSize="18" WidthRequest="10"/>
+            <Label Text="Mężczyzna" FontAttributes="Bold" WidthRequest="90" FontSize="18" Margin="30,0,0,0"/>
+            <RadioButton FontSize="18" WidthRequest="10"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="30">
+            <Label Text="Wzrost" FontAttributes="Bold" WidthRequest="150" FontSize="18" Margin="30,0,30,0"/>
+            <Entry x:Name="height" FontSize="18" WidthRequest="150"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="30">
+            <Label Text="Waga" FontAttributes="Bold" WidthRequest="150" FontSize="18" Margin="30,0,30,0"/>
+            <Entry x:Name="weight" FontSize="18" WidthRequest="150"/>
+        </StackLayout>
+        <Button Text="Oblicz" WidthRequest="160" HorizontalOptions="CenterAndExpand"/>
     </StackLayout>
 
 </ContentPage>
