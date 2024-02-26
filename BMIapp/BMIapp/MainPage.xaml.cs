@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static SQLite.SQLite3;
 
 namespace BMIapp
 {
@@ -14,6 +15,7 @@ namespace BMIapp
         {
             InitializeComponent();
         }
+        float currentResult = 0;
         void CalculateBMI(object sender, EventArgs e)
         {
             float result = float.Parse(weight.Text) / (float.Parse(height.Text)/100 * float.Parse(height.Text)/100) ;
@@ -46,8 +48,16 @@ namespace BMIapp
                             Result.Text += "\n Masz otyłość";
                         }
                     }
-                }
+                }     
             }
+            currentResult = result;
+        }
+        void SaveRecord(object s, EventArgs e)
+        {
+            bool isMan = true;
+
+            if (gender.IsChecked) isMan = false;
+            App.database.Add(new BMIResult() { Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = isMan });
         }
     }
 }
