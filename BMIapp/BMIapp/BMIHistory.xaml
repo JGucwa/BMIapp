@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMIapp.BMIHistory">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="Historylst">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Height}"/>
+                            <Label Text="{Binding Weight}"/>
+                            <Label Text="{Binding Gender}"/>
+                            <Label Text="{Binding BMI}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

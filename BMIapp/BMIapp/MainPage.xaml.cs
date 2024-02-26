@@ -58,6 +58,7 @@ namespace BMIapp
 
             if (gender.IsChecked) isMan = false;
             App.database.Add(new BMIResult() { Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = isMan });
+            DisplayAlert("Informacja", "Zapisano wynik", "ok");
         }
     }
 }
