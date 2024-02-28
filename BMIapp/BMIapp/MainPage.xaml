@@ -4,7 +4,7 @@
              x:Class="BMIapp.MainPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Zapisz" Clicked="SaveRecord"/>
-        <ToolbarItem Text="Wyniki"/>
+        <ToolbarItem Text="Wyniki" Clicked="GoToHistory"/>
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Label Text="Oblicz swoje BMI" FontAttributes="Bold" FontSize="30" Margin="30" HorizontalOptions="CenterAndExpand"/>

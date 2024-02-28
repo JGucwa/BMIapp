@@ -52,13 +52,19 @@ namespace BMIapp
             }
             currentResult = result;
         }
-        void SaveRecord(object s, EventArgs e)
+        async void SaveRecord(object s, EventArgs e)
         {
-            bool isMan = true;
+            string titleResult = await DisplayPromptAsync("Tytuł", "Podaj tytuł");
+            string gendertxt = "Mężczyzna";
 
-            if (gender.IsChecked) isMan = false;
-            App.database.Add(new BMIResult() { Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = isMan });
-            DisplayAlert("Informacja", "Zapisano wynik", "ok");
+            if (gender.IsChecked) gendertxt = "Kobieta";
+
+            await App.database.Add(new BMIResult() { Title = titleResult, Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = gendertxt, Type = Result.Text });
+            await DisplayAlert("Informacja", "Zapisano wynik", "ok");
+        }
+        void GoToHistory(object s, EventArgs e)
+        {
+            Navigation.PushAsync(new BMIHistory());
         }
     }
 }

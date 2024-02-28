@@ -15,8 +15,11 @@ namespace BMIapp
         public BMIHistory()
         {
             InitializeComponent();
-         
-            Historylst.ItemsSource = App.database.GetAll();
+            InitializeData();
+        }
+        async void InitializeData()
+        {
+            Historylst.ItemsSource = await App.database.GetAll();
         }
     }
 }

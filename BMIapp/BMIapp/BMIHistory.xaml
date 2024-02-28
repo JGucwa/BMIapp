@@ -4,18 +4,29 @@
              x:Class="BMIapp.BMIHistory">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="Historylst">
-                <ListView.ItemTemplate>
+            <CollectionView x:Name="Historylst">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
+                            <Label Text="Tytuł: "/>
+                            <Label Text="{Binding Title}"/>
+                            <Label Text="Data: "/>
+                            <Label Text="{Binding Date}"/>
+                            <Label Text="Wzrost: "/>
                             <Label Text="{Binding Height}"/>
+                            <Label Text="Waga: "/>
                             <Label Text="{Binding Weight}"/>
+                            <Label Text="Płeć: "/>
                             <Label Text="{Binding Gender}"/>
+                            <Label Text="Wynik: "/>
                             <Label Text="{Binding BMI}"/>
+                            <Label Text="Typ: "/>
+                            <Label Text="{Binding Type}"/>
+                            <BoxView HeightRequest="2" BackgroundColor="Black"/>
                         </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
