@@ -59,7 +59,7 @@ namespace BMIapp
 
             if (gender.IsChecked) gendertxt = "Kobieta";
 
-            await App.database.Add(new BMIResult() { Title = titleResult, Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = gendertxt, Type = Result.Text });
+            App.database.Add(new BMIResult() { Title = titleResult, Date = DateTime.Now, Weight = float.Parse(weight.Text), Height = float.Parse(height.Text), BMI = currentResult, Gender = gendertxt, Type = Result.Text });
             await DisplayAlert("Informacja", "Zapisano wynik", "ok");
         }
         void GoToHistory(object s, EventArgs e)

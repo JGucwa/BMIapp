@@ -19,7 +19,15 @@ namespace BMIapp
         }
         async void InitializeData()
         {
-            Historylst.ItemsSource = await App.database.GetAll();
+            Historylst.ItemsSource = App.database.GetAll();
+        }
+        void Remove(object sender, EventArgs e)
+        {
+            var btn = sender as Button;
+            BMIResult result = btn.BindingContext as BMIResult;
+            App.database.Remove(result);
+
+            InitializeData();
         }
     }
 }

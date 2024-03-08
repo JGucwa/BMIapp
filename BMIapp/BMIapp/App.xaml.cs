@@ -14,7 +14,7 @@ namespace BMIapp
             get
             {
                 if (db == null)
-                    db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "baza.db"));
+                    db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "baza.txt"));
 
                 return db;
             }

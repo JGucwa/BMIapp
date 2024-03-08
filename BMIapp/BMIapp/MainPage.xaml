@@ -25,6 +25,7 @@
         </StackLayout>
         <Button Text="Oblicz" WidthRequest="160" HorizontalOptions="CenterAndExpand" Clicked="CalculateBMI"/>
         <Label x:Name="Result" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Button Text="Zapisz" WidthRequest="160" HorizontalOptions="CenterAndExpand" Clicked="CalculateBMI"/>
     </StackLayout>
 
 </ContentPage>

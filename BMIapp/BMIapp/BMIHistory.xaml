@@ -23,6 +23,7 @@
                             <Label Text="Typ: "/>
                             <Label Text="{Binding Type}"/>
                             <BoxView HeightRequest="2" BackgroundColor="Black"/>
+                            <Button Clicked="Remove" Text="Usun" BackgroundColor="Red"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
